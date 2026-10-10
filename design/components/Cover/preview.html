@@ -1,0 +1,55 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>언어치료 학습 앱 디자인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface-page); color:var(--ink-primary); font-family:var(--font-sans); overflow:hidden; word-break:keep-all; }
+  .cover { position:relative; width:960px; height:288px; overflow:hidden; }
+  .art { position:absolute; top:0; left:480px; width:480px; height:288px; overflow:hidden; }
+  .art svg { display:block; width:480px; height:288px; }
+  .anat { fill:var(--subject-anatomy); }
+  .dis { fill:var(--subject-disorders); }
+  .dev { fill:var(--subject-development); }
+  .acc { fill:var(--accent); }
+  .src { fill:var(--subject-anatomy-soft); r:var(--radius-sm); }
+  .wave { fill:none; stroke:var(--subject-anatomy-soft); stroke-width:var(--space-1); stroke-linecap:round; }
+  .blk { rx:var(--radius-lg); }
+  .pill { rx:var(--radius-sm); }
+  .words { position:absolute; left:var(--space-6); bottom:var(--space-6); max-width:440px; }
+  .name { margin:0; font-size:64px; line-height:.95; font-weight:700; letter-spacing:-.01em; color:var(--ink-primary); }
+  .tag { margin:var(--space-3) 0 0 2px; font-size:14px; line-height:20px; color:var(--ink-secondary); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      subject-anatomy 176×256 bled off the top (deepest subject, the largest) · subject-disorders 120×168 · subject-development 152×112 bleeding off the right edge · accent 176×16 pill (the one action colour, kept small) — ≈30% of 960×288
+  arrangement one tall teal slab with two shorter satellites stepping down in height, bottoms on one line at y=232; the accent pill a space-4 gutter below, like a reading-progress bar
+  pattern     literal motif row, from "speech" and the ProgressRing: five quarter-arcs in subject-anatomy-soft radiating from a radius-sm disc inside the slab, a sound wave that is also a progress arc
+  scales      sides in space-2 multiples; gutters space-4; arc pitch space-6, stroke space-1; corners radius-lg, pill rx radius-sm (half of its 16px height), disc r radius-sm
+-->
+<rect class="anat blk" x="16" y="-24" width="176" height="256" rx="20"/>
+<circle class="src" cx="40" cy="208" r="8"/>
+<path class="wave" d="M40 176A32 32 0 0 1 72 208"/>
+<path class="wave" d="M40 152A56 56 0 0 1 96 208"/>
+<path class="wave" d="M40 128A80 80 0 0 1 120 208"/>
+<path class="wave" d="M40 104A104 104 0 0 1 144 208"/>
+<path class="wave" d="M40 80A128 128 0 0 1 168 208"/>
+<rect class="dis blk" x="208" y="64" width="120" height="168" rx="20"/>
+<rect class="dev blk" x="344" y="120" width="152" height="112" rx="20"/>
+<rect class="acc pill" x="208" y="248" width="176" height="16" rx="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">언어치료 학습<br>앱 디자인</h1>
+<p class="tag">언어치료학 대학원생을 위한, 차분하고 정확한 학습 도구</p>
+</div>
+</div>
+</body>
+</html>

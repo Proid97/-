@@ -1,0 +1,37 @@
+<!-- @dsCard group="Cards" height=230 subtitle="과목 세 개, 상단 과목색 띠와 진도" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SubjectCard — 미리보기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface-page);color:var(--ink-primary);font-family:var(--font-sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+p,h1,h2,h3{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.focus{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.anat{--s:var(--subject-anatomy);--s-ink:var(--subject-anatomy-ink);--s-soft:var(--subject-anatomy-soft)}
+.dev{--s:var(--subject-development);--s-ink:var(--subject-development-ink);--s-soft:var(--subject-development-soft)}
+.dis{--s:var(--subject-disorders);--s-ink:var(--subject-disorders-ink);--s-soft:var(--subject-disorders-soft)}.scard{background:var(--surface-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column}
+.scard .strip{height:6px;background:var(--s)}
+.scard .in{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-3);flex:1}
+.scard .tag{align-self:flex-start;font-size:13px;line-height:18px;font-weight:600;color:var(--s-ink);background:var(--s-soft);padding:2px var(--space-2);border-radius:var(--radius-sm)}
+.scard .name{font-size:17px;line-height:22px;font-weight:600}
+.scard .meta{font-size:13px;line-height:18px;color:var(--ink-tertiary)}
+.bar{height:6px;border-radius:var(--radius-pill);background:var(--border-subtle);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:var(--radius-pill);background:var(--s)}
+.scard .prog{display:flex;align-items:center;gap:var(--space-3)}
+.scard .prog .bar{flex:1}
+.scard .pct{font-family:var(--font-mono);font-size:15px;line-height:20px;font-weight:500;color:var(--s-ink);min-width:3.2em;text-align:right}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);padding:var(--space-4)}
+</style>
+</head>
+<body>
+<div class="grid"><article class="scard anat"><div class="strip"></div><div class="in"><span class="tag">12챕터</span><h3 class="name">언어기관해부생리</h3><p class="meta">퀴즈 86문항 · 모의고사 3회</p><div class="prog"><div class="bar" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="진도"><i style="width:64%"></i></div><span class="pct">64%</span></div></div></article><article class="scard dev"><div class="strip"></div><div class="in"><span class="tag">10챕터</span><h3 class="name">언어발달</h3><p class="meta">퀴즈 72문항 · 모의고사 3회</p><div class="prog"><div class="bar" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" aria-label="진도"><i style="width:38%"></i></div><span class="pct">38%</span></div></div></article><article class="scard dis"><div class="strip"></div><div class="in"><span class="tag">14챕터</span><h3 class="name">의사소통장애개론</h3><p class="meta">퀴즈 104문항 · 모의고사 4회</p><div class="prog"><div class="bar" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" aria-label="진도"><i style="width:12%"></i></div><span class="pct">12%</span></div></div></article></div>
+</body>
+</html>

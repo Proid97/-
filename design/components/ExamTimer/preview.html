@@ -1,0 +1,45 @@
+<!-- @dsCard group="Exam" height=240 subtitle="남은 시간 · 문항 번호 · 제출, 5분 미만 경고" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExamTimer — 미리보기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface-page);color:var(--ink-primary);font-family:var(--font-sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+p,h1,h2,h3{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.focus{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.btn{font:inherit;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:var(--tap-min);padding:0 var(--space-4);border-radius:var(--radius-md);border:1px solid transparent;cursor:pointer;font-size:17px;line-height:22px;white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-secondary{background:var(--surface-card);color:var(--accent-ink);border-color:var(--border-strong)}
+.btn-quiet{background:transparent;color:var(--accent-ink)}
+.btn-lg{min-height:50px;padding:0 var(--space-6);border-radius:var(--radius-md)}
+.btn-sm{min-height:32px;padding:0 var(--space-3);font-size:15px;line-height:20px;border-radius:var(--radius-sm)}
+.btn-block{display:flex;width:100%}
+.btn[disabled]{background:var(--border-subtle);color:var(--ink-tertiary);border-color:transparent;cursor:not-allowed}
+.btn-quiet[disabled]{background:transparent}.xbar{display:flex;align-items:center;gap:var(--space-3);min-height:56px;padding:var(--space-2) var(--space-4);background:var(--surface-elevated);box-shadow:var(--shadow-sheet)}
+.xbar .time{display:flex;align-items:center;gap:var(--space-2);color:var(--ink-primary);padding:var(--space-1) var(--space-3) var(--space-1) var(--space-2);border-radius:var(--radius-pill);min-height:36px}
+.xbar .time .v{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:20px;line-height:24px;font-weight:500}
+.xbar .time .w{font-size:13px;line-height:18px;font-weight:600}
+.xbar .count{flex:1;text-align:center;font-family:var(--font-mono);font-size:15px;line-height:20px;font-weight:500;color:var(--ink-secondary)}
+.xbar .count b{color:var(--ink-primary);font-weight:600}
+.xbar.warn .time{background:var(--warning-soft);color:var(--warning-ink)}
+.xprog{height:3px;background:var(--border-subtle)}
+.xprog i{display:block;height:100%;background:var(--accent)}.lbl-sm{font-size:13px;line-height:18px;color:var(--ink-tertiary);margin-bottom:var(--space-2)}
+.wrap{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-4);max-width:420px}
+.frame{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-subtle)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div><p class="lbl-sm">기본</p><div class="frame"><div><div class="xbar"><span class="time" role="timer" aria-label="남은 시간 24:37"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg><span class="v">24:37</span></span><span class="count" aria-label="40문항 중 17번"><b>17</b> / 40</span><button class="btn btn-primary btn-sm" style="min-height:var(--tap-min)">제출</button></div><div class="xprog"><i style="width:42%"></i></div></div></div></div>
+<div><p class="lbl-sm">경고 (5분 미만)</p><div class="frame"><div><div class="xbar warn"><span class="time" role="timer" aria-label="남은 시간 04:12, 5분 미만"><svg class="ic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg><span class="v">04:12</span><span class="w">5분 미만</span></span><span class="count" aria-label="40문항 중 36번"><b>36</b> / 40</span><button class="btn btn-primary btn-sm" style="min-height:var(--tap-min)">제출</button></div><div class="xprog"><i style="width:90%"></i></div></div></div></div>
+</div>
+</body>
+</html>

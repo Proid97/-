@@ -1,0 +1,73 @@
+<!-- @dsCard group="Screens" height=640 width=960 subtitle="iPad 가로 분할: 과목 사이드바 + 학습자료 목록" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScreenIPad — 미리보기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface-page);color:var(--ink-primary);font-family:var(--font-sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+p,h1,h2,h3{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.focus{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.anat{--s:var(--subject-anatomy);--s-ink:var(--subject-anatomy-ink);--s-soft:var(--subject-anatomy-soft)}
+.dev{--s:var(--subject-development);--s-ink:var(--subject-development-ink);--s-soft:var(--subject-development-soft)}
+.dis{--s:var(--subject-disorders);--s-ink:var(--subject-disorders-ink);--s-soft:var(--subject-disorders-soft)}.scard{background:var(--surface-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column}
+.scard .strip{height:6px;background:var(--s)}
+.scard .in{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-3);flex:1}
+.scard .tag{align-self:flex-start;font-size:13px;line-height:18px;font-weight:600;color:var(--s-ink);background:var(--s-soft);padding:2px var(--space-2);border-radius:var(--radius-sm)}
+.scard .name{font-size:17px;line-height:22px;font-weight:600}
+.scard .meta{font-size:13px;line-height:18px;color:var(--ink-tertiary)}
+.bar{height:6px;border-radius:var(--radius-pill);background:var(--border-subtle);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:var(--radius-pill);background:var(--s)}
+.scard .prog{display:flex;align-items:center;gap:var(--space-3)}
+.scard .prog .bar{flex:1}
+.scard .pct{font-family:var(--font-mono);font-size:15px;line-height:20px;font-weight:500;color:var(--s-ink);min-width:3.2em;text-align:right}.seg{display:flex;padding:2px;gap:2px;background:var(--surface-sidebar);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);min-height:36px}
+.seg button{flex:1;font:inherit;font-size:15px;line-height:20px;color:var(--ink-secondary);background:transparent;border:0;border-radius:6px;padding:var(--space-2) var(--space-3);cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--surface-elevated);color:var(--ink-primary);font-weight:600;box-shadow:var(--shadow-card)}.group{background:var(--surface-card);border-radius:var(--radius-md);border:1px solid var(--border-subtle);overflow:hidden}
+.row{display:flex;align-items:center;gap:var(--space-3);min-height:64px;padding:var(--space-3) var(--space-4);color:inherit;text-decoration:none}
+.row + .row{border-top:1px solid var(--border-subtle)}
+.row .no{flex:none;width:40px;height:40px;border-radius:var(--radius-sm);background:var(--s-soft);color:var(--s-ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:600;font-size:15px}
+.row .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.row .t{font-size:17px;line-height:22px;font-weight:600}
+.row .m{font-size:13px;line-height:18px;color:var(--ink-tertiary);display:flex;align-items:center;gap:var(--space-1)}
+.row .st{flex:none;display:flex;align-items:center;gap:var(--space-1);font-size:13px;line-height:18px;color:var(--ink-secondary)}
+.row .st.reading{color:var(--s-ink);font-weight:600}
+.row .chev{color:var(--ink-tertiary)}
+.row.done .t{color:var(--ink-secondary)}
+.ipad{width:960px;height:640px;display:flex;background:var(--surface-page);overflow:hidden}
+.side{width:var(--sidebar-width);flex:none;background:var(--surface-sidebar);border-right:1px solid var(--border-subtle);padding:var(--space-6) var(--space-3);display:flex;flex-direction:column;gap:var(--space-1)}
+.side .app{font-size:22px;line-height:28px;font-weight:600;padding:0 var(--space-3) var(--space-4)}
+.side .h{font-size:13px;line-height:18px;color:var(--ink-tertiary);padding:var(--space-2) var(--space-3)}
+.si{display:flex;align-items:center;gap:var(--space-3);min-height:var(--tap-min);padding:0 var(--space-3);border-radius:var(--radius-md);color:var(--ink-primary);text-decoration:none;font-size:17px;line-height:22px}
+.si .dot{width:10px;height:10px;border-radius:var(--radius-pill);background:var(--s);flex:none}
+.si .sn{flex:1}
+.si .sp{font-family:var(--font-mono);font-size:15px;color:var(--ink-tertiary)}
+.si.on{background:var(--accent-soft);font-weight:600}
+.si.on .sp{color:var(--accent-ink)}
+.si.plain .dot{background:transparent}
+.main{flex:1;min-width:0;padding:var(--space-8) var(--space-6) 0;display:flex;flex-direction:column;gap:var(--space-4);overflow:hidden}
+.mh{display:flex;flex-direction:column;gap:var(--space-2)}
+.mh h1{font-size:28px;line-height:34px;font-weight:700}
+.mh .meta{display:flex;align-items:center;gap:var(--space-3);font-size:15px;line-height:20px;color:var(--ink-secondary)}
+.mh .bar{width:160px}
+.seg{max-width:420px}
+</style>
+</head>
+<body>
+<div class="ipad">
+<nav class="side" aria-label="과목"><p class="app">언어치료 학습</p><p class="h">과목</p><a class="si anat on" href="#" aria-current=page><span class="dot"></span><span class="sn">언어기관해부생리</span><span class="sp">64%</span></a><a class="si dev" href="#"><span class="dot"></span><span class="sn">언어발달</span><span class="sp">38%</span></a><a class="si dis" href="#"><span class="dot"></span><span class="sn">의사소통장애개론</span><span class="sp">12%</span></a><p class="h" style="margin-top:var(--space-4)">나</p>
+<a class="si plain" href="#"><span class="dot"></span><span class="sn">내 기록</span></a><a class="si plain" href="#"><span class="dot"></span><span class="sn">오답 노트</span><span class="sp">23</span></a></nav>
+<main class="main anat">
+<div class="mh"><h1>언어기관해부생리</h1><div class="meta"><div class="bar" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><i style="width:64%"></i></div><span>12챕터 중 7챕터 완료 · 64%</span></div></div>
+<div class="seg" role="tablist" aria-label="기능"><button role="tab" aria-selected="true">학습자료</button><button role="tab" aria-selected="false">퀴즈</button><button role="tab" aria-selected="false">모의고사</button></div>
+<div class="group"><a class="row done" href="#"><span class="no">01</span><span class="txt"><span class="t">언어기관의 개관</span><span class="m">읽는 시간 8분 · 그림 4</span></span><span class="st"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>읽음</span><span class="chev"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></span></a><a class="row" href="#"><span class="no">02</span><span class="txt"><span class="t">호흡 기관과 호흡 근육</span><span class="m">읽는 시간 12분 · 그림 6</span></span><span class="st reading">40% 읽는 중</span><span class="chev"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></span></a><a class="row" href="#"><span class="no">03</span><span class="txt"><span class="t">후두의 구조: 연골과 관절</span><span class="m">읽는 시간 10분 · 그림 5</span></span><span class="st">안 읽음</span><span class="chev"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></span></a><a class="row" href="#"><span class="no">04</span><span class="txt"><span class="t">성대 진동과 발성 이론</span><span class="m">읽는 시간 9분 · 그림 3</span></span><span class="st">안 읽음</span><span class="chev"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></span></a><a class="row" href="#"><span class="no">05</span><span class="txt"><span class="t">조음 기관: 구강과 인두</span><span class="m">읽는 시간 11분 · 그림 7</span></span><span class="st">안 읽음</span><span class="chev"><svg class="ic" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></span></a></div>
+</main>
+</div>
+</body>
+</html>

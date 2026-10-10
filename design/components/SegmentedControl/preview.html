@@ -1,0 +1,32 @@
+<!-- @dsCard group="Navigation" height=190 subtitle="과목 화면의 세 기능 전환" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SegmentedControl — 미리보기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface-page);color:var(--ink-primary);font-family:var(--font-sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+p,h1,h2,h3{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.focus{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.seg{display:flex;padding:2px;gap:2px;background:var(--surface-sidebar);border:1px solid var(--border-subtle);border-radius:var(--radius-sm);min-height:36px}
+.seg button{flex:1;font:inherit;font-size:15px;line-height:20px;color:var(--ink-secondary);background:transparent;border:0;border-radius:6px;padding:var(--space-2) var(--space-3);cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--surface-elevated);color:var(--ink-primary);font-weight:600;box-shadow:var(--shadow-card)}.lbl-sm{font-size:13px;line-height:18px;color:var(--ink-tertiary);margin-bottom:var(--space-2)}
+.wrap{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-4);max-width:420px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div><p class="lbl-sm">학습자료 선택</p>
+<div class="seg" role="tablist" aria-label="기능"><button role="tab" aria-selected="true">학습자료</button><button role="tab" aria-selected="false">퀴즈</button><button role="tab" aria-selected="false">모의고사</button></div></div>
+<div><p class="lbl-sm">퀴즈 선택</p>
+<div class="seg" role="tablist" aria-label="기능"><button role="tab" aria-selected="false">학습자료</button><button role="tab" aria-selected="true">퀴즈</button><button role="tab" aria-selected="false">모의고사</button></div></div>
+</div>
+</body>
+</html>

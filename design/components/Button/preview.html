@@ -1,0 +1,54 @@
+<!-- @dsCard group="Actions" height=370 subtitle="주 · 보조 · 조용한 버튼, 세 크기, 비활성" -->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Button — 미리보기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+body{background:var(--surface-page);color:var(--ink-primary);font-family:var(--font-sans);word-break:keep-all;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+p,h1,h2,h3{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.focus{outline:2px solid var(--focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.btn{font:inherit;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:var(--tap-min);padding:0 var(--space-4);border-radius:var(--radius-md);border:1px solid transparent;cursor:pointer;font-size:17px;line-height:22px;white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-secondary{background:var(--surface-card);color:var(--accent-ink);border-color:var(--border-strong)}
+.btn-quiet{background:transparent;color:var(--accent-ink)}
+.btn-lg{min-height:50px;padding:0 var(--space-6);border-radius:var(--radius-md)}
+.btn-sm{min-height:32px;padding:0 var(--space-3);font-size:15px;line-height:20px;border-radius:var(--radius-sm)}
+.btn-block{display:flex;width:100%}
+.btn[disabled]{background:var(--border-subtle);color:var(--ink-tertiary);border-color:transparent;cursor:not-allowed}
+.btn-quiet[disabled]{background:transparent}.lbl-sm{font-size:13px;line-height:18px;color:var(--ink-tertiary);margin-bottom:var(--space-2)}
+.wrap{padding:var(--space-4);display:flex;flex-direction:column;gap:var(--space-4)}
+.r{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div><p class="lbl-sm">종류</p><div class="r">
+<button class="btn btn-primary">시작하기</button>
+<button class="btn btn-secondary">나중에 보기</button>
+<button class="btn btn-quiet">해설 보기</button>
+</div></div>
+<div><p class="lbl-sm">키보드 포커스 (focus-ring 2px, 간격 2px)</p><div class="r">
+<button class="btn btn-primary focus">시작하기</button>
+<button class="btn btn-secondary focus">나중에 보기</button>
+</div></div>
+<div><p class="lbl-sm">크기 (큰 50 · 기본 44 · 작은 32, 터치 영역은 44 유지)</p><div class="r">
+<button class="btn btn-primary btn-lg">모의고사 시작</button>
+<button class="btn btn-primary">제출</button>
+<button class="btn btn-secondary btn-sm">다시 풀기</button>
+</div></div>
+<div><p class="lbl-sm">비활성</p><div class="r">
+<button class="btn btn-primary" disabled>제출</button>
+<button class="btn btn-secondary" disabled>다음 문항</button>
+<button class="btn btn-quiet" disabled>이전</button>
+</div></div>
+</div>
+</body>
+</html>
